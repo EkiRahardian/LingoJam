@@ -32,7 +32,7 @@ function css() {
 		$(elementName).css("font-family", "Noto Sans, Noto Sans Old Turkic");
 	}
 	$('#firsttext').css("padding", "13px").css("box-sizing", "border-box");
-	$('#secondtext').css("padding", "13px").css("box-sizing", "border-box");
+	$('#secondtext').css("padding", "13px").css("box-sizing", "border-box").css("direction", "rtl");
 	$("#letterlist").css("text-align", "center").css("height", "auto").css("direction", "rtl");
 	setFont('#firsttext');
 	setFont('#secondtext');
