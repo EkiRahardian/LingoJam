@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<label>encrypted</label>
+		<div id="encrypted"></div>
+		<br>
+		<label>decrypted</label>
+		<div id="decrypted"></div>
+		<script>
+			const password = "thisIsNotThePassword";
+			const encrypt = "encryptThisText";
+			const encrypted = CryptoJS.AES.encrypt(JSON.stringify({encrypt}), password).toString();
+			const decrypted = JSON.parse(CryptoJS.AES.decrypt(encrypted, password).toString(CryptoJS.enc.Utf8)).encrypt;
+			document.getElementById("encrypted").innerHTML = encrypted;
+			document.getElementById("decrypted").innerHTML = decrypted;
+		</script>
+	</body>
+</html>

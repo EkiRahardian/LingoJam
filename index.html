@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet">
+		<style>
+			a {
+				font-family: Montserrat, Helvetica, sans-serif;
+				font-weight: 400;
+				text-decoration: none;
+				color: #777;
+			}
+			a:hover {
+				color: #0d96e5;
+			}
+			p {
+				font-size: 16px;
+				color: #333;
+				font-family: Montserrat, Helvetica, sans-serif;
+				font-weight: 600;
+				line-height: 1.4;
+				margin: 0;
+				padding: 0;
+			}
+			.section {
+				width: 90%;
+				max-width: 600px;
+				position: relative;
+				margin: 0 auto;
+			}
+			.button {
+				background: #0d96e5;
+				opacity: .9;
+				padding: 20px;
+				margin: 10px auto;
+			}
+			.button:hover {
+				opacity: 1;
+			}
+			.button2 {
+				background: red;
+				opacity: .9;
+				padding: 20px;
+				margin: 10px auto;
+			}
+			.button2:hover {
+				opacity: 1;
+			}
+			.white {
+				color: #fff;
+			}
+			.center-align {
+				text-align: center;
+			}
+			@media (max-width: 768px) {
+				
+			}
+		</style>
+		<script src="home.js"></script>
+		<script>home("Lingojam translators designed by Naufal Rizky Rahardian");</script>
+		<script>
+			window.addEventListener('load', function() {
+				(async () => {
+					const exclude = [
+						"index.html",
+						"home.js",
+						"checkpassword.js",
+						"LICENCE.MD",
+						"encryptor.html",
+					];
+					const response = await fetch('https://api.github.com/repos/ekirahardian/lingojam/contents/');
+					const data = await response.json();
+					let htmlString = "<div class='section padding-bottom center-align'>";
+					for (const file of data) {
+						if (exclude.includes(file.name) === false) {
+							htmlString += `
+								<span style="display:flex;">
+									<a href="${file.name}">
+										<div class="button">
+											<p class="white">${file.name}</p>
+										</div>
+									</a>
+									<a href="${file.name}/editor">
+										<div class="button2">
+											<p class="white">editor</p>
+										</div>
+									</a>
+								</span>
+							`;
+						}
+					}
+					htmlString += "</div>";
+					$('body').prepend(htmlString);
+				})()
+			});
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
