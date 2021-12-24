@@ -54,7 +54,7 @@ function firstTextEvent() {
 			charArray[i] = replaceLetters(replace1, replace2, charArray[i]);
 		}
 		if (inLowerCase === true) {
-			charArray[i] = charArray[i].toLowerCase("tr");
+			charArray[i] = charArray[i].toLowerCase('tr');
 			inLowerCase = false;
 		}
 	}
