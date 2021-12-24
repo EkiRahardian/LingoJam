@@ -44,10 +44,10 @@ function firstTextEvent() {
 			charArray[i] = charArray[i].toUpperCase();
 			inLowerCase = true;
 		}
-		if (charArray[i] === "К" && (["а", "о", "у", "ы", "А", "О", "У", "Ы"].includes(charArray[i+1]) || ["q", "Q", "а", "o", "u", "ı", "А", "O", "U", "I"].includes(charArray[i-1]))) {
+		if (charArray[i] === "К" && (["а", "о", "у", "ы", "А", "О", "У", "Ы"].includes(charArray[i+1]) || ["q", "Q", "a", "o", "u", "ı", "A", "O", "U", "I"].includes(charArray[i-1]))) {
 			charArray[i] = "Q";
 		}
-		if (charArray[i] === "Г" && (["а", "о", "у", "ы", "А", "О", "У", "Ы"].includes(charArray[i+1]) || ["ğ", "Ğ", "а", "o", "u", "ı", "А", "O", "U", "I"].includes(charArray[i-1]))) {
+		if (charArray[i] === "Г" && (["а", "о", "у", "ы", "А", "О", "У", "Ы"].includes(charArray[i+1]) || ["ğ", "Ğ", "a", "o", "u", "ı", "A", "O", "U", "I"].includes(charArray[i-1]))) {
 			charArray[i] = "Ğ";
 		}
 		else {
