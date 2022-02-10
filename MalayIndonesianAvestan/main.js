@@ -30,7 +30,6 @@ replace1.push("V"); replace2.push("𐬬");
 replace1.push("W"); replace2.push("𐬡");
 replace1.push("Y"); replace2.push("𐬫");
 replace1.push("Z"); replace2.push("𐬰");
-replace1.push("?"); replace2.push("𐬰");
 function firstTextEvent() {
 	const charArray = Array.from($("#firsttext").val());
 	for (const i of charArray.keys()) {
