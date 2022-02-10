@@ -75,6 +75,7 @@ function elements(replace1, replace2) {
 	}
 	$('#letterlist').attr("class", "white-section-area-thing").html(letterlist);
 	$("a[style='color:#444444']").attr("target", "_blank").attr("rel", "noopener noreferrer");
+	$(".subtitle").eq(0).attr("id", "subtitle");
 	$("#submit-suggestion").html("Kirim");
 	$("#suggestion-box").attr("placeholder", "Saran untuk mengembangkan penerjemah?");
 }
@@ -97,7 +98,7 @@ function css() {
 		}
 	`);
 	function setFont(elementName) {
-		$(elementName).css("font-family", "Noto Sans, Noto Sans Old Turkic");
+		$(elementName).css("font-family", "Noto Sans, Noto Sans Avestan");
 	}
 	$('#firsttext').css("padding", "13px").css("box-sizing", "border-box");
 	$('#secondtext').css("padding", "13px").css("box-sizing", "border-box").css('direction', 'rtl');;
