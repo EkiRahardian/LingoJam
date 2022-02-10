@@ -30,6 +30,7 @@ replace1.push("V"); replace2.push("𐬬");
 replace1.push("W"); replace2.push("𐬡");
 replace1.push("Y"); replace2.push("𐬫");
 replace1.push("Z"); replace2.push("𐬰");
+replace1.push("?"); replace2.push("𐬰");
 function firstTextEvent() {
 	const charArray = Array.from($("#firsttext").val());
 	for (const i of charArray.keys()) {
@@ -77,7 +78,7 @@ function elements(replace1, replace2) {
 	$("a[style='color:#444444']").attr("target", "_blank").attr("rel", "noopener noreferrer");
 	$(".subtitle").eq(0).attr("id", "subtitle");
 	$("#submit-suggestion").html("Kirim");
-	$("#suggestion-box").attr("placeholder", "Saran untuk mengembangkan penerjemah?");
+	$("#suggestion-box").attr("placeholder", "𐬯𐬀𐬭𐬀𐬥 𐬎𐬥𐬙𐬎𐬐 𐬨𐬆𐬢𐬆𐬨𐬠𐬀𐬢𐬐𐬀𐬥 𐬞𐬆𐬥𐬆𐬭𐬘𐬆𐬨𐬀𐬵?");
 }
 function css() {
 	function insertCSS(code) {
@@ -107,6 +108,7 @@ function css() {
 	setFont('#secondtext');
 	setFont("#subtitle");
 	setFont("#letterlist");
+	setFont("#suggestion-box");
 }
 function description() {
 	const ekiRahardian = "<a rel='noopener noreferrer' target='_blank' href='https://www.reddit.com/user/ekirahardian'>Naufal Rizky Rahardian</a>";
