@@ -4,8 +4,8 @@ replace1.push("A"); replace2.push("𐬀");
 replace1.push("B"); replace2.push("𐬠");
 replace1.push("C"); replace2.push("𐬗");
 replace1.push("D"); replace2.push("𐬛");
-replace1.push("E"); replace2.push("𐬈");
-replace1.push("Ə"); replace2.push("𐬆");
+replace1.push("E"); replace2.push("𐬆");
+replace1.push("É"); replace2.push("𐬈");
 replace1.push("F"); replace2.push("𐬟");
 replace1.push("G"); replace2.push("𐬔");
 replace1.push("Gh"); replace2.push("𐬖");
@@ -118,7 +118,7 @@ function description() {
 	$("#suggestion-area").after(`
 		<div id='descriptionText' class='white-section-area-thing'>
 			<p>What would Indonesian/Malay look like if it were written in Avestan script? It would look like this.</p>
-			<p>Write "e pepet" (schwa) as "ə" (Example: menggunakan → mənggunakan), replace "q" with "k" (Example: quran → kuran), and "x" to "ks" or "s" depending on position (Example: axolotl → aksolotl, xenofobia → senofobia).</p>
+			<p>Write "e pepet" (schwa) as "e" and "e taling" as "é" (Example: merdeka → merdéka), replace "q" with "k" (Example: quran → kuran), and "x" to "ks" or "s" depending on position (Example: axolotl → aksolotl, xenofobia → senofobia).</p>
 			<p>Designed by ${ekiRahardian}, this translator uses custom scripts from ${scriptLink}.<br>If something is wrong, try to reset the cache.</p>
 		</div>
 	`);
@@ -135,6 +135,6 @@ function main() {
 	description();
 	$('#firsttext').on('input', firstTextEvent);
 	$('#secondtext').on('input', secondTextEvent);
-	$("#firsttext").val("Səmua orang dilahirkan mərdeka dan məmpunyai martabat dan hak-hak yang sama. Məreka dikaruniai akal dan hati nurani dan həndaknya bərgaul satu sama lain dalam pərsaudaraan.");
+	$("#firsttext").val("Semua orang dilahirkan merdéka dan mempunyai martabat dan hak-hak yang sama. Meréka dikaruniai akal dan hati nurani dan hendaknya bergaul satu sama lain dalam persaudaraan.");
 	firstTextEvent();
 }
