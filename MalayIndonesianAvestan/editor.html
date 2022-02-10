@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="../home.js" onload='home("Editor");'></script>
+	</head>
+	<body>
+		<iframe id="mainFrame" class="responsive-iframe" style="display: none;"></iframe>
+		<div id="center">
+			<form>
+				<label for="password">
+					Password:
+				</label>
+				<input type="password" id="password">
+				<script src="../checkpassword.js"></script>
+				<script>
+					const encrypt = "U2FsdGVkX1+hd/iu2mMW7cfzQ68H3BCuwkTBao7Pt1OItSR+xENGxqJW83F8AOZdTq6kWXViB8JDDllgbFpRBgNCq19EUip4LETYgqGr/3g=";
+				</script>
+				<input onclick="checkpassword(encrypt);" type="button" value="Submit"/>
+			</form>
+		</div>
+	</body>
+</html>
