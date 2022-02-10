@@ -104,6 +104,7 @@ function css() {
 	$('#firsttext').css("padding", "13px").css("box-sizing", "border-box");
 	$('#secondtext').css("padding", "13px").css("box-sizing", "border-box").css('direction', 'rtl');;
 	$("#letterlist").css("text-align", "center").css("height", "auto");
+	$("#suggestion-box").css('direction', 'rtl');
 	setFont('#firsttext');
 	setFont('#secondtext');
 	setFont("#subtitle");
