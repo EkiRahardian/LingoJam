@@ -96,9 +96,16 @@ function css() {
 			}
 		}
 	`);
+	function setFont(elementName) {
+		$(elementName).css("font-family", "Noto Sans, Noto Sans Old Turkic");
+	}
 	$('#firsttext').css("padding", "13px").css("box-sizing", "border-box");
 	$('#secondtext').css("padding", "13px").css("box-sizing", "border-box").css('direction', 'rtl');;
 	$("#letterlist").css("text-align", "center").css("height", "auto");
+	setFont('#firsttext');
+	setFont('#secondtext');
+	setFont("#subtitle");
+	setFont("#letterlist");
 }
 function description() {
 	const ekiRahardian = "<a rel='noopener noreferrer' target='_blank' href='https://www.reddit.com/user/ekirahardian'>Naufal Rizky Rahardian</a>";
