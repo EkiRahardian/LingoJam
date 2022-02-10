@@ -64,6 +64,7 @@ function secondTextEvent() {
 			charArray[i] = charArray[i].toUpperCase();
 		}
 		charArray[i] = replaceLetters(replace2, replace1, charArray[i]);
+		charArray[i] === charArray[i].toLowerCase();
 	}
 	$("#firsttext").val(charArray.join(""));
 }
