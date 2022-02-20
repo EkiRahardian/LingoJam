@@ -17,7 +17,7 @@ replace1.push("Ξ"); replace2.push("Ⲝ");
 replace1.push("Ο"); replace2.push("Ⲟ");
 replace1.push("Π"); replace2.push("Ⲡ");
 replace1.push("Ρ"); replace2.push("Ⲣ");
-replace1.push("Ϲ"); replace2.push("Ⲥ");
+replace1.push("Σ"); replace2.push("Ⲥ");
 replace1.push("Τ"); replace2.push("Ⲧ");
 replace1.push("Υ"); replace2.push("Ⲩ");
 replace1.push("Φ"); replace2.push("Ⲫ");
@@ -32,7 +32,7 @@ function firstTextEvent() {
 			charArray[i] = charArray[i].toUpperCase();
 			inLowerCase = true;
 		}
-		if (charArray[i] === "Σ") {charArray[i] = "Ϲ";}
+		if (charArray[i] === "Ϲ") {charArray[i] = "Σ";}
 		charArray[i] = replaceLetters(replace1, replace2, charArray[i]);
 		if (inLowerCase === true) {
 			charArray[i] = charArray[i].toLowerCase();
@@ -53,6 +53,9 @@ function secondTextEvent() {
 		if (inLowerCase === true) {
 			charArray[i] = charArray[i].toLowerCase();
 			inLowerCase = false;
+		}
+		if (charArray[i] === "σ" && replace2.includes(charArray[i+1].toUpperCase()) !== false) {
+			charArray[i] = "ς";
 		}
 	}
 	$("#firsttext").val(charArray.join("").normalize('NFC'));
