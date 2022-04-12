@@ -54,8 +54,13 @@ function secondTextEvent() {
 			charArray[i] = charArray[i].toLowerCase();
 			inLowerCase = false;
 		}
-		if (charArray[i] === "σ" && replace2.includes(charArray[i+1].toUpperCase()) === false) {
-			charArray[i] = "ς";
+		if (charArray[i] === "σ") {
+			if (charArray[i+1] === undefined) {
+				charArray[i] = "ς";
+			}
+			else if (replace2.includes(charArray[i+1].toUpperCase()) === false) {
+				charArray[i] = "ς";
+			}
 		}
 	}
 	$("#firsttext").val(charArray.join("").normalize('NFC'));
