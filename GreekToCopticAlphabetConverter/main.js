@@ -9,7 +9,7 @@ replace1.push("Ε"); replace2.push("Ⲉ");
 replace1.push("Ζ"); replace2.push("Ⲍ");
 replace1.push("Η"); replace2.push("Ⲏ");
 replace1.push("Θ"); replace2.push("Ⲑ");
-replace1.push("Ι"); replace2.push("І");
+replace1.push("Ι"); replace2.push("Ⲓ");
 replace1.push("Κ"); replace2.push("Ⲕ");
 replace1.push("Λ"); replace2.push("Ⲗ");
 replace1.push("Μ"); replace2.push("Ⲙ");
