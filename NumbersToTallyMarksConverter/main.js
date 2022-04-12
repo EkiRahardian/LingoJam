@@ -14,7 +14,7 @@ function firstTextEvent() {
 	$("#secondtext").val(tallyMarks);
 }
 function secondTextEvent() {
-	$("#secondtext").val($("#secondtext").val().replace(\/[^\u1D377-\u1D378]\/g, ''));
+	$("#secondtext").val($("#secondtext").val().replace(/[^𝍸|^𝍷]/g, ''));
 	const tallyMarks = Array.from($("#secondtext").val());
 	const numberFive = tallyMarks.filter(x => x==="𝍸").length;
 	const numberOne = tallyMarks.filter(x => x==="𝍷").length;
