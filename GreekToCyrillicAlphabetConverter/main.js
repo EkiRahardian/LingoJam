@@ -61,7 +61,7 @@ function secondTextEvent() {
 	$("#firsttext").val(charArray.join("").normalize('NFC'));
 }
 function elements(replace1, replace2) {
-	$("#submit-suggestion").html("Στέλνω");
+	$("#submit-suggestion").html("Сте́лнѡ");
 	$(".subtitle").eq(0).attr("id", "subtitle");
 	$(".intro.white-section-area-thing").eq(0).attr("id", "letterlist");
 	let letterlist = "";
