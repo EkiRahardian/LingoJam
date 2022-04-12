@@ -1,5 +1,4 @@
 "use strict";
-//test
 const replace1 = []; const replace2 = [];
 replace1.push("Α"); replace2.push("Ⲁ");
 replace1.push("Β"); replace2.push("Ⲃ");
