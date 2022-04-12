@@ -8,7 +8,7 @@ replace1.push("Ε"); replace2.push("Е");
 replace1.push("Ζ"); replace2.push("З");
 replace1.push("Η"); replace2.push("И");
 replace1.push("Θ"); replace2.push("Ѳ");
-replace1.push("Ι"); replace2.push("Ꙇ");
+replace1.push("Ι"); replace2.push("І");
 replace1.push("Κ"); replace2.push("К");
 replace1.push("Λ"); replace2.push("Л");
 replace1.push("Μ"); replace2.push("М");
