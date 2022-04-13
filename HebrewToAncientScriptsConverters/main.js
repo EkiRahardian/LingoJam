@@ -362,5 +362,6 @@ function main(jsAbjad) {
 		$('#secondtext').on('input', secondTextEvent);
 		$("#firsttext").val("כל בני האדם נולדו בני חורין ושווים בערכם ובזכויותיהם. כולם חוננו בתבונה ובמצפון, לפיכך חובה עליהם לנהוג איש ברעהו ברוח של אחווה.");
 		firstTextEvent();
+		$(".subtitle").html(subtitle + " - ברוכים הבאים");
 	});
 }
