@@ -14,9 +14,11 @@
 			for (const i of translatorLink.keys()) {
 				translatorLinks[i] = translatorLink[i][0];
 				translatorLinks[i] = translatorLinks[i].substring(translatorLinks[i].indexOf("href='") + 6).split("'")[0];
-				if (convert.toLowerCase() === translatorLink[i][1]) {
-					srcIframe = translatorLinks[i];
-					break;
+				if (convert !== null) {
+					if (convert.toLowerCase() === translatorLink[i][1]) {
+						srcIframe = translatorLinks[i];
+						break;
+					}
 				}
 			}
 			document.querySelector("#mainFrame").setAttribute("src", srcIframe);
