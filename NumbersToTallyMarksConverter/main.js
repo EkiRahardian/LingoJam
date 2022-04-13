@@ -4,13 +4,7 @@ function firstTextEvent() {
 	const numbers = parseInt($("#firsttext").val());
 	const tallyMarkFive = Math.floor(numbers / 5);
 	const tallyMarkOne = numbers % 5;
-	let tallyMarks = "";
-	for (let i = 0; i < tallyMarkFive; i++) {
-		tallyMarks += "𝍸";
-	}
-	for (let i = 0; i < tallyMarkOne; i++) {
-		tallyMarks += "𝍷";
-	}
+	let tallyMarks = new Array(tallyMarkFive + tallyMarkOne).fill("𝍸", 0, tallyMarkFive).fill("𝍷", tallyMarkFive, tallyMarkFive + tallyMarkOne).join('');
 	$("#secondtext").val(tallyMarks);
 }
 function secondTextEvent() {
