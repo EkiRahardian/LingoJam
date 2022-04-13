@@ -44,7 +44,7 @@ function description() {
 	$(".intro.white-section-area-thing").eq(0).attr("id", "descriptionText");
 	$('#descriptionText').attr("class", "white-section-area-thing").html(`
 		<p>Convert numbers to tally marks.</p>
-		<p>Bug: The system will hang if you input a very big number.</p>
+		<p>Due to memory issues, you're only allowed to write up to 5 digit number.</p>
 		<p>Designed by ${ekiRahardian}, this converter uses custom scripts from ${scriptLink}.<br>If something is wrong, try to reset the cache.</p>
 	`);
 	$("a[style='color:#444444']").attr("target", "_blank").attr("rel", "noopener noreferrer");
