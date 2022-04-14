@@ -1,11 +1,16 @@
 "use strict";
 function firstTextEvent() {
-	$("#firsttext").val($("#firsttext").val().replace(/[^0-9]/g, ''));
-	const numbers = parseInt($("#firsttext").val());
-	const tallyMarkFive = Math.floor(numbers / 5);
-	const tallyMarkOne = numbers % 5;
-	let tallyMarks = new Array(tallyMarkFive + tallyMarkOne).fill("𝍸", 0, tallyMarkFive).fill("𝍷", tallyMarkFive, tallyMarkFive + tallyMarkOne).join('');
-	$("#secondtext").val(tallyMarks);
+	if ($("#firsttext").val().length !== 0) {
+		$("#firsttext").val($("#firsttext").val().replace(/[^0-9]/g, ''));
+		const numbers = parseInt($("#firsttext").val());
+		const tallyMarkFive = Math.floor(numbers / 5);
+		const tallyMarkOne = numbers % 5;
+		let tallyMarks = new Array(tallyMarkFive + tallyMarkOne).fill("𝍸", 0, tallyMarkFive).fill("𝍷", tallyMarkFive, tallyMarkFive + tallyMarkOne).join('');
+		$("#secondtext").val(tallyMarks);
+	}
+	else {
+		$("#secondtext").val("");
+	}
 }
 function secondTextEvent() {
 	$("#secondtext").val($("#secondtext").val().replace(/[^𝍸|^𝍷]/g, ''));
