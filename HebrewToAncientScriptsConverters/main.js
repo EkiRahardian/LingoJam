@@ -316,20 +316,15 @@ for (const i of translatorLink.keys()) {
 	totaltranslatorProcess.push(translatorLink[i][0]);
 }
 const totaltranslatorLink = totaltranslatorProcess.join("");
-const ekiRahardian = "<a rel='noopener noreferrer' target='_blank' href='https://www.reddit.com/user/ekirahardian'>Naufal Rizky Rahardian</a>";
-const designer = "Designed by " + ekiRahardian + ".";
+const designer = "Designed by <a rel='noopener noreferrer' target='_blank' href='https://www.reddit.com/user/ekirahardian'>Naufal Rizky Rahardian</a>.";
 const scriptLink = "<a rel='noopener noreferrer' target='_blank' href='https://github.com/EkiRahardian/LingoJam/tree/main/HebrewToAncientScriptsConverters'>GitHub</a>";
 function description() {
 	let descriptionText = "<div id='descriptionText' class='white-section-area-thing'><p>Swaps/converts Hebrew script to ";
 	if (arguments.length === 1) {
-		descriptionText += `
-			${arguments[0]} script and vice versa. ${designer}</p>
-		`;
+		descriptionText += `${arguments[0]} script and vice versa. ${designer}</p>`;
 	}
 	else {
-		descriptionText += `
-			ancient scripts in the list. ${designer}</p>
-		`;
+		descriptionText += `ancient scripts in the list. ${designer}</p>`;
 	}
 	descriptionText += `
 			<p>This translator uses custom scripts from ${scriptLink}.</p>
@@ -342,8 +337,9 @@ function description() {
 	$("#suggestion-area").after(descriptionText);
 }
 function replaceLetters(replace1, replace2, string) {
-	for (const i of replace1.keys()) {
-		string = string.replace(replace1[i], replace2[i]);
+	const index = replace1.indexOf(string);
+	if (index !== -1) {
+		string = string.replace(replace1[index], replace2[index]);
 	}
 	return string;
 }

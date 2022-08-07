@@ -55,10 +55,7 @@ function secondTextEvent() {
 			inLowerCase = false;
 		}
 		if (charArray[i] === "σ") {
-			if (charArray[i+1] === undefined) {
-				charArray[i] = "ς";
-			}
-			else if (replace2.includes(charArray[i+1].toUpperCase()) === false) {
+			if ((charArray[i+1] === undefined) || (replace2.includes(charArray[i+1].toUpperCase()) === false)) {
 				charArray[i] = "ς";
 			}
 		}
@@ -116,8 +113,9 @@ function description() {
 	`);
 }
 function replaceLetters(replace1, replace2, string) {
-	for (const i of replace1.keys()) {
-		string = string.replace(replace1[i], replace2[i]);
+	const index = replace1.indexOf(string);
+	if (index !== -1) {
+		string = string.replace(replace1[index], replace2[index]);
 	}
 	return string;
 }
