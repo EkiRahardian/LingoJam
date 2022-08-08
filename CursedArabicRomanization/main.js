@@ -83,55 +83,6 @@ replace1.push("٧"); replace2.push("7");
 replace1.push("٨"); replace2.push("8");
 replace1.push("٩"); replace2.push("9");
 replace1.push(...harakat1); replace2.push(...harakat2);
-function firstTextEvent() {
-	let charArray = Array.from($("#firsttext").val());
-	lettersEquivalents(charArray, equiv1, equiv2);
-	$("#firsttext").val(charArray.join(""));
-	charArray = Array.from($("#firsttext").val());
-	for (const i of charArray.keys()) {
-		charArray[i] = replaceLetters(replace1, replace2, charArray[i]);
-	}
-	$("#secondtext").val(charArray.join(""));
-}
-function secondTextEvent() {
-	let charArray = Array.from($("#secondtext").val().toUpperCase());
-	for (const i of charArray.keys()) {
-		if (charArray[i+1] === "̄") {// ā ū ī
-			if (charArray[i] === "ͣ") {charArray[i] = charArray[i].replace("ͣ", "ٰ"); charArray[i+1] = "";}// ā
-			if (charArray[i] === "ͧ") {charArray[i] = charArray[i].replace("ͧ", "ٗ"); charArray[i+1] = "";}// ū
-			if (charArray[i] === "ͥ") {charArray[i] = charArray[i].replace("ͥ", "ٖ"); charArray[i+1] = "";}// ī
-		}
-		if (charArray[i+1] === "̚") {// a̚ u̚ i̚
-			if (charArray[i] === "ͣ") {charArray[i] = charArray[i].replace("ͣ", "ً"); charArray[i+1] = "";}// a̚
-			if (charArray[i] === "ͧ") {charArray[i] = charArray[i].replace("ͧ", "ٌ"); charArray[i+1] = "";}// u̚
-			if (charArray[i] === "ͥ") {charArray[i] = charArray[i].replace("ͥ", "ٍ"); charArray[i+1] = "";}// i̚
-		}
-		if (charArray[i] === "A" && charArray[i+1] === "͐") {// A͐
-			charArray[i] = charArray[i].replace("A", "ٱ"); charArray[i+1] = "";// A͐
-		}
-		if (charArray[i] === "N" && charArray[i+1] === "̐") {// N̐
-			if (replace2.includes(charArray[i+2]) === false || (harakat2.includes(charArray[i+2]) && replace2.includes(charArray[i+3]) === false)) {
-				charArray[i] = charArray[i].replace("N", "ں"); charArray[i+1] = "";// N̐
-			}
-			else {
-				charArray[i] = charArray[i].replace("N", "ن"); charArray[i+1] = charArray[i+1].replace("̐", "٘");// N̐
-			}
-		}
-		if (charArray[i] === "̐" && charArray[i+1] === "͏") {// 
-			charArray[i] = charArray[i].replace("̐", "٘"); charArray[i+1] = "";// 
-		}
-		if (charArray[i] === "A" && charArray[i+1] === "̤") {// A̤
-			charArray[i] = charArray[i].replace("A", "ى"); charArray[i+1] = "";// A̤
-		}
-		if (charArray[i] === "Ḩ" && charArray[i+1] === "̈") {// Ḩ̈
-			charArray[i] = charArray[i].replace("Ḩ", "ۃ"); charArray[i+1] = "";// Ḩ̈
-		}
-		else {
-			charArray[i] = replaceLetters(replace2, replace1, charArray[i]);
-		}
-	}
-	$("#firsttext").val(charArray.join(""));
-}
 const equiv1 = []; const equiv2 = [];
 equiv1.push("أ"); equiv2.push("أ");
 equiv1.push("آ"); equiv2.push("آ");
@@ -169,6 +120,53 @@ equiv1.push("۷"); equiv2.push("٧");
 equiv1.push("۸"); equiv2.push("٨");
 equiv1.push("۹"); equiv2.push("٩");
 equiv1.push("ۤ"); equiv2.push("ٓ");
+function firstTextEvent() {
+	const charArray = Array.from($("#firsttext").val());
+	for (const i of charArray.keys()) {
+		charArray[i] = replaceLetters(equiv1, equiv2, charArray[i]);
+		charArray[i] = replaceLetters(replace1, replace2, charArray[i]);
+	}
+	$("#secondtext").val(charArray.join(""));
+}
+function secondTextEvent() {
+	const charArray = Array.from($("#secondtext").val().toUpperCase());
+	for (const i of charArray.keys()) {
+		if (charArray[i+1] === "̄") {// ā ū ī
+			if (charArray[i] === "ͣ") {charArray[i] = charArray[i].replace("ͣ", "ٰ"); charArray[i+1] = "";}// ā
+			if (charArray[i] === "ͧ") {charArray[i] = charArray[i].replace("ͧ", "ٗ"); charArray[i+1] = "";}// ū
+			if (charArray[i] === "ͥ") {charArray[i] = charArray[i].replace("ͥ", "ٖ"); charArray[i+1] = "";}// ī
+		}
+		if (charArray[i+1] === "̚") {// a̚ u̚ i̚
+			if (charArray[i] === "ͣ") {charArray[i] = charArray[i].replace("ͣ", "ً"); charArray[i+1] = "";}// a̚
+			if (charArray[i] === "ͧ") {charArray[i] = charArray[i].replace("ͧ", "ٌ"); charArray[i+1] = "";}// u̚
+			if (charArray[i] === "ͥ") {charArray[i] = charArray[i].replace("ͥ", "ٍ"); charArray[i+1] = "";}// i̚
+		}
+		if (charArray[i] === "A" && charArray[i+1] === "͐") {// A͐
+			charArray[i] = charArray[i].replace("A", "ٱ"); charArray[i+1] = "";// A͐
+		}
+		if (charArray[i] === "N" && charArray[i+1] === "̐") {// N̐
+			if (replace2.includes(charArray[i+2]) === false || (harakat2.includes(charArray[i+2]) && replace2.includes(charArray[i+3]) === false)) {
+				charArray[i] = charArray[i].replace("N", "ں"); charArray[i+1] = "";// N̐
+			}
+			else {
+				charArray[i] = charArray[i].replace("N", "ن"); charArray[i+1] = charArray[i+1].replace("̐", "٘");// N̐
+			}
+		}
+		if (charArray[i] === "̐" && charArray[i+1] === "͏") {// 
+			charArray[i] = charArray[i].replace("̐", "٘"); charArray[i+1] = "";// 
+		}
+		if (charArray[i] === "A" && charArray[i+1] === "̤") {// A̤
+			charArray[i] = charArray[i].replace("A", "ى"); charArray[i+1] = "";// A̤
+		}
+		if (charArray[i] === "Ḩ" && charArray[i+1] === "̈") {// Ḩ̈
+			charArray[i] = charArray[i].replace("Ḩ", "ۃ"); charArray[i+1] = "";// Ḩ̈
+		}
+		else {
+			charArray[i] = replaceLetters(replace2, replace1, charArray[i]);
+		}
+	}
+	$("#firsttext").val(charArray.join(""));
+}
 function elements(replace1, replace2) {
 	$(".intro.white-section-area-thing").eq(0).attr("id", "letterlist");
 	let letterlist = "";
@@ -216,11 +214,6 @@ function replaceLetters(replace1, replace2, string) {
 		string = string.replace(replace1[index], replace2[index]);
 	}
 	return string;
-}
-function lettersEquivalents(charArray, equiv1, equiv2) {
-	for (const i of charArray.keys()) {
-		charArray[i] = replaceLetters(equiv1, equiv2, charArray[i]);
-	}
 }
 function main() {
 	elements(replace1, replace2);
