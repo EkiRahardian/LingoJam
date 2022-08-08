@@ -343,6 +343,11 @@ function replaceLetters(replace1, replace2, string) {
 	}
 	return string;
 }
+function lettersEquivalents(charArray, equiv1, equiv2) {
+	for (const i of charArray.keys()) {
+		charArray[i] = replaceLetters(equiv1, equiv2, charArray[i]);
+	}
+}
 function main(jsAbjad) {
 	window.parent.postMessage(window.location.href, homePage);
 	loadScript(homePage + 'abjads/' + jsAbjad +'.js?v=' + cache, function() {
