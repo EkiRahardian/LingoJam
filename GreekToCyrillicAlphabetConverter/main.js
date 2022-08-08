@@ -92,7 +92,7 @@ function css() {
 		}
 	`);
 	function setFont(elementName) {
-		$(elementName).css("font-family", "Arial");
+		$(elementName).css("font-family", "Noto Sans");
 	}
 	$('#firsttext').css("padding", "13px").css("box-sizing", "border-box");
 	$('#secondtext').css("padding", "13px").css("box-sizing", "border-box");
