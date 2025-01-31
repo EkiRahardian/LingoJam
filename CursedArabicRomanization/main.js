@@ -121,7 +121,7 @@ equiv1.push("۸"); equiv2.push("٨");
 equiv1.push("۹"); equiv2.push("٩");
 equiv1.push("ۤ"); equiv2.push("ٓ");
 function firstTextEvent() {
-	const charArray = Array.from($("#firsttext").val());
+	const charArray = Array.from($("#firsttext").val().normalize("NFD"));
 	for (const i of charArray.keys()) {
 		charArray[i] = replaceLetters(equiv1, equiv2, charArray[i]);
 		charArray[i] = replaceLetters(replace1, replace2, charArray[i]);
